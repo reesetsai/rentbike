@@ -38,7 +38,11 @@
 		display: block;}
 
 		}
-
+.set{
+clear: both;
+}
+	
+	
  
  
 </style>
@@ -184,9 +188,849 @@
 
   
  <div id="section" class="container-fluid">
-  <h1>聯絡我們</h1>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <h1>問卷調查</h1>
+  <p>填寫問卷即送優待券!!</p>
+  
+	<form class="form-horizontal" role="form">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="name">姓名:</label>
+      <div class="col-sm-5">
+        <input type="email" class="form-control" id="email" placeholder="請輸入您的姓名">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="phonenumber">電話號碼:</label>
+      <div class="col-sm-5">          
+        <input type="text" class="form-control" id="phonenumber" placeholder="請輸入您的電話號碼">
+      </div>
+	  </div>
+	<div class="form-group">
+      <label class="control-label col-sm-2" for="email">EMAIL:</label>
+      <div class="col-sm-5">          
+        <input type="text" class="form-control" id="email" placeholder="請輸入email">
+      </div>
+    </div>
+	<div class="form-group">
+      <label class="control-label col-sm-2" for="where">居住地點:</label>
+      <div class="col-sm-5">
+      <select id="donateInfo_City" name="donateInfo.City"><option value="A01">台北市</option>
+<option value="B01">基隆市</option>
+<option value="B02">新北市</option>
+<option value="B03">宜蘭縣</option>
+<option value="B04">新竹市</option>
+<option value="B05">新竹縣</option>
+<option value="B06">桃園縣</option>
+<option value="B07">苗栗縣</option>
+<option value="B08">台中市</option>
+<option value="B10">彰化縣</option>
+<option value="B11">南投縣</option>
+<option value="B12">嘉義市</option>
+<option value="B13">嘉義縣</option>
+<option value="B14">雲林縣</option>
+<option value="B15">台南市</option>
+<option value="B17">高雄市</option>
+<option value="B19">澎湖縣</option>
+<option value="B20">屏東縣</option>
+<option value="B21">台東縣</option>
+<option value="B22">花蓮縣</option>
+<option value="B23">金門縣</option>
+<option value="B24">連江縣</option>
+<option value="B25">南海諸島</option>
+<option value="B26">釣漁台列嶼</option>
+</select>
+       <select id="donateInfo_Division" name="donateInfo.Division"><option value="553">水里鄉</option>
+<option value="555">魚池鄉</option>
+<option value="556">信義鄉</option>
+<option value="557">竹山鎮</option>
+<option value="558">鹿谷鄉</option>
+<option value="599">東區</option>
+<option value="600">西區</option>
+<option value="602">番路鄉</option>
+<option value="603">梅山鄉</option>
+<option value="604">竹崎鄉</option>
+<option value="605">阿里山鄉</option>
+<option value="606">中埔鄉</option>
+<option value="607">大埔鄉</option>
+<option value="608">水上鄉</option>
+<option value="611">鹿草鄉</option>
+<option value="612">太保市</option>
+<option value="613">朴子市</option>
+<option value="614">東石鄉</option>
+<option value="615">六腳鄉</option>
+<option value="616">新港鄉</option>
+<option value="621">民雄鄉</option>
+<option value="622">大林鎮</option>
+<option value="623">溪口鄉</option>
+<option value="624">義竹鄉</option>
+<option value="625">布袋鎮</option>
+<option value="630">斗南鎮</option>
+<option value="631">大埤鄉</option>
+<option value="632">虎尾鎮</option>
+<option value="633">土庫鎮</option>
+<option value="634">褒忠鄉</option>
+<option value="635">東勢鄉</option>
+<option value="636">臺西鄉</option>
+<option value="637">崙背鄉</option>
+<option value="638">麥寮鄉</option>
+<option value="640">斗六市</option>
+<option value="643">林內鄉</option>
+<option value="646">古坑鄉</option>
+<option value="647">莿桐鄉</option>
+<option value="648">西螺鎮</option>
+<option value="649">二崙鄉</option>
+<option value="651">北港鎮</option>
+<option value="652">水林鄉</option>
+<option value="653">口湖鄉</option>
+<option value="654">四湖鄉</option>
+<option value="655">元長鄉</option>
+<option value="700">中西區</option>
+<option value="701">東區</option>
+<option value="702">南區</option>
+<option value="704">北區</option>
+<option value="708">安平區</option>
+<option value="709">安南區</option>
+<option value="710">永康區</option>
+<option value="711">歸仁區</option>
+<option value="712">新化區</option>
+<option value="713">左鎮區</option>
+<option value="714">玉井區</option>
+<option value="715">楠西區</option>
+<option value="716">南化區</option>
+<option value="717">仁德區</option>
+<option value="718">關廟區</option>
+<option value="719">龍崎區</option>
+<option value="720">官田區</option>
+<option value="721">麻豆區</option>
+<option value="722">佳里區</option>
+<option value="723">西港區</option>
+<option value="724">七股區</option>
+<option value="725">將軍區</option>
+<option value="726">學甲區</option>
+<option value="727">北門區</option>
+<option value="730">新營區</option>
+<option value="731">後壁區</option>
+<option value="732">白河區</option>
+<option value="733">東山區</option>
+<option value="734">六甲區</option>
+<option value="735">下營區</option>
+<option value="736">柳營區</option>
+<option value="737">鹽水區</option>
+<option value="741">善化區</option>
+<option value="742">大內區</option>
+<option value="743">山上區</option>
+<option value="744">新市區</option>
+<option value="745">安定區</option>
+<option value="800">新興區</option>
+<option value="801">前金區</option>
+<option value="802">苓雅區</option>
+<option value="803">鹽埕區</option>
+<option value="804">鼓山區</option>
+<option value="805">旗津區</option>
+<option value="806">前鎮區</option>
+<option value="807">三民區</option>
+<option value="811">楠梓區</option>
+<option value="812">小港區</option>
+<option value="813">左營區</option>
+<option value="814">仁武區</option>
+<option value="815">大社區</option>
+<option value="817">東沙</option>
+<option value="819">南沙</option>
+<option value="820">岡山區</option>
+<option value="821">路竹區</option>
+<option value="822">阿蓮區</option>
+<option value="823">田寮區</option>
+<option value="824">燕巢區</option>
+<option value="825">橋頭區</option>
+<option value="826">梓官區</option>
+<option value="827">彌陀區</option>
+<option value="828">永安區</option>
+<option value="829">湖內區</option>
+<option value="830">鳳山區</option>
+<option value="831">大寮區</option>
+<option value="832">林園區</option>
+<option value="833">鳥松區</option>
+<option value="840">大樹區</option>
+<option value="842">旗山區</option>
+<option value="843">美濃區</option>
+<option value="844">六龜區</option>
+<option value="845">內門區</option>
+<option value="846">杉林區</option>
+<option value="847">甲仙區</option>
+<option value="848">桃源區</option>
+<option value="849">那瑪夏區</option>
+<option value="851">茂林區</option>
+<option value="852">茄萣區</option>
+<option value="880">馬公市</option>
+<option value="881">西嶼鄉</option>
+<option value="882">望安鄉</option>
+<option value="883">七美鄉</option>
+<option value="884">白沙鄉</option>
+<option value="885">湖西鄉</option>
+<option value="890">金沙鎮</option>
+<option value="891">金湖鎮</option>
+<option value="892">金寧鄉</option>
+<option value="893">金城鄉</option>
+<option value="894">烈嶼鄉</option>
+<option value="896">烏坵鄉</option>
+<option value="900">屏東市</option>
+<option value="901">三地門鄉</option>
+<option value="902">霧臺鄉</option>
+<option value="903">瑪家鄉</option>
+<option value="904">九如鄉</option>
+<option value="905">里港鄉</option>
+<option value="906">高樹鄉</option>
+<option value="907">鹽埔鄉</option>
+<option value="908">長治鄉</option>
+<option value="909">麟洛鄉</option>
+<option value="911">竹田鄉</option>
+<option value="912">內埔鄉</option>
+<option value="913">萬丹鄉</option>
+<option value="920">潮州鎮</option>
+<option value="921">泰武鄉</option>
+<option value="922">來義鄉</option>
+<option value="923">萬巒鄉</option>
+<option value="924">崁頂鄉</option>
+<option value="925">新埤鄉</option>
+<option value="926">南州鄉</option>
+<option value="927">林邊鄉</option>
+<option value="928">東港鎮</option>
+<option value="929">琉球鄉</option>
+<option value="931">佳冬鄉</option>
+<option value="932">新園鄉</option>
+<option value="940">枋寮鄉</option>
+<option value="941">枋山鄉</option>
+<option value="942">春日鄉</option>
+<option value="943">獅子鄉</option>
+<option value="944">車城鄉</option>
+<option value="945">牡丹鄉</option>
+<option value="946">恆春鎮</option>
+<option value="947">滿州鄉</option>
+<option value="950">臺東市</option>
+<option value="951">綠島鄉</option>
+<option value="952">蘭嶼鄉</option>
+<option value="953">延平鄉</option>
+<option value="954">卑南鄉</option>
+<option value="955">鹿野鄉</option>
+<option value="956">關山鎮</option>
+<option value="957">海端鄉</option>
+<option value="958">池上鄉</option>
+<option value="959">東河鄉</option>
+<option value="961">成功鎮</option>
+<option value="962">長濱鄉</option>
+<option value="963">太麻里鄉</option>
+<option value="964">金峰鄉</option>
+<option value="965">大武鄉</option>
+<option value="966">達仁鄉</option>
+<option value="970">花蓮市</option>
+<option value="971">新城鄉</option>
+<option value="972">秀林鄉</option>
+<option value="973">吉安鄉</option>
+<option value="974">壽豐鄉</option>
+<option value="975">鳳林鎮</option>
+<option value="976">光復鄉</option>
+<option value="977">豐濱鄉</option>
+<option value="978">瑞穗鄉</option>
+<option value="979">萬榮鄉</option>
+<option value="981">玉里鎮</option>
+<option value="982">卓溪鄉</option>
+<option value="983">富里鄉</option>
+<option value="100">中正區</option>
+<option value="103">大同區</option>
+<option value="104">中山區</option>
+<option value="105">松山區</option>
+<option value="106">大安區</option>
+<option value="108">萬華區</option>
+<option value="110">信義區</option>
+<option value="111">士林區</option>
+<option value="112">北投區</option>
+<option value="114">內湖區</option>
+<option value="115">南港區</option>
+<option value="116">文山區(木柵)</option>
+<option value="117">文山區(景美)</option>
+<option value="200">仁愛區</option>
+<option value="201">信義區</option>
+<option value="202">中正區</option>
+<option value="203">中山區</option>
+<option value="204">安樂區</option>
+<option value="205">暖暖區</option>
+<option value="206">七堵區</option>
+<option value="207">萬里區</option>
+<option value="208">金山區</option>
+<option value="209">南竿鄉</option>
+<option value="210">北竿鄉</option>
+<option value="211">莒光鄉</option>
+<option value="212">東引鄉</option>
+<option value="220">板橋區</option>
+<option value="221">汐止區</option>
+<option value="222">深坑區</option>
+<option value="223">石碇區</option>
+<option value="224">瑞芳區</option>
+<option value="226">平溪區</option>
+<option value="227">雙溪區</option>
+<option value="228">貢寮區</option>
+<option value="231">新店區</option>
+<option value="232">坪林區</option>
+<option value="233">烏來區</option>
+<option value="234">永和區</option>
+<option value="235">中和區</option>
+<option value="236">土城區</option>
+<option value="237">三峽區</option>
+<option value="238">樹林區</option>
+<option value="239">鶯歌區</option>
+<option value="241">三重區</option>
+<option value="242">新莊區</option>
+<option value="243">泰山區</option>
+<option value="244">林口區</option>
+<option value="247">蘆洲區</option>
+<option value="248">五股區</option>
+<option value="249">八里區</option>
+<option value="251">淡水區</option>
+<option value="252">三芝區</option>
+<option value="253">石門區</option>
+<option value="260">宜蘭市</option>
+<option value="261">頭城鎮</option>
+<option value="262">礁溪鄉</option>
+<option value="263">壯圍鄉</option>
+<option value="264">員山鄉</option>
+<option value="265">羅東鎮</option>
+<option value="266">三星鄉</option>
+<option value="267">大同鄉</option>
+<option value="268">五結鄉</option>
+<option value="269">冬山鄉</option>
+<option value="270">蘇澳鎮</option>
+<option value="272">南澳鄉</option>
+<option value="290">釣魚台列嶼</option>
+<option value="298">東區</option>
+<option value="299">北區</option>
+<option value="300">香山區</option>
+<option value="302">竹北市</option>
+<option value="303">湖口鄉</option>
+<option value="304">新豐鄉</option>
+<option value="305">新埔鎮</option>
+<option value="306">關西鎮</option>
+<option value="307">芎林鄉</option>
+<option value="308">寶山鄉</option>
+<option value="310">竹東鎮</option>
+<option value="311">五峰鄉</option>
+<option value="312">橫山鄉</option>
+<option value="313">尖石鄉</option>
+<option value="314">北埔鄉</option>
+<option value="315">峨眉鄉</option>
+<option value="320">中壢市</option>
+<option value="324">平鎮市</option>
+<option value="325">龍潭鄉</option>
+<option value="326">楊梅鎮</option>
+<option value="327">新屋鄉</option>
+<option value="328">觀音鄉</option>
+<option value="330">桃園市</option>
+<option value="333">龜山鄉</option>
+<option value="334">八德市</option>
+<option value="335">大溪鎮</option>
+<option value="336">復興鄉</option>
+<option value="337">大園鄉</option>
+<option value="338">蘆竹鄉</option>
+<option value="350">竹南鎮</option>
+<option value="351">頭份鎮</option>
+<option value="352">三灣鄉</option>
+<option value="353">南庄鄉</option>
+<option value="354">獅潭鄉</option>
+<option value="356">後龍鎮</option>
+<option value="357">通霄鎮</option>
+<option value="358">苑裡鎮</option>
+<option value="360">苗栗市</option>
+<option value="361">造橋鄉</option>
+<option value="362">頭屋鄉</option>
+<option value="363">公館鄉</option>
+<option value="364">大湖鄉</option>
+<option value="365">泰安鄉</option>
+<option value="366">銅鑼鄉</option>
+<option value="367">三義鄉</option>
+<option value="368">西湖鄉</option>
+<option value="369">卓蘭鎮</option>
+<option value="400">中區</option>
+<option value="401">東區</option>
+<option value="402">南區</option>
+<option value="403">西區</option>
+<option value="404">北區</option>
+<option value="406">北屯區</option>
+<option value="407">西屯區</option>
+<option value="408">南屯區</option>
+<option value="411">太平區</option>
+<option value="412">大里區</option>
+<option value="413">霧峰區</option>
+<option value="414">烏日區</option>
+<option value="420">豐原區</option>
+<option value="421">后里區</option>
+<option value="422">石岡區</option>
+<option value="423">東勢區</option>
+<option value="424">和平區</option>
+<option value="426">新社區</option>
+<option value="427">潭子區</option>
+<option value="428">大雅區</option>
+<option value="429">神岡區</option>
+<option value="432">大肚區</option>
+<option value="433">沙鹿區</option>
+<option value="434">龍井區</option>
+<option value="435">梧棲區</option>
+<option value="436">清水區</option>
+<option value="437">大甲區</option>
+<option value="438">外埔區</option>
+<option value="439">大安區</option>
+<option value="500">彰化市</option>
+<option value="502">芬園鄉</option>
+<option value="503">花壇鄉</option>
+<option value="504">秀水鄉</option>
+<option value="505">鹿港鎮</option>
+<option value="506">福興鄉</option>
+<option value="507">線西鄉</option>
+<option value="508">和美鎮</option>
+<option value="509">伸港鄉</option>
+<option value="510">員林鎮</option>
+<option value="511">社頭鄉</option>
+<option value="512">永靖鄉</option>
+<option value="513">埔心鄉</option>
+<option value="514">溪湖鎮</option>
+<option value="515">大村鄉</option>
+<option value="516">埔鹽鄉</option>
+<option value="520">田中鎮</option>
+<option value="521">北斗鎮</option>
+<option value="522">田尾鄉</option>
+<option value="523">埤頭鄉</option>
+<option value="524">溪州鄉</option>
+<option value="525">竹塘鄉</option>
+<option value="526">二林鎮</option>
+<option value="527">大城鄉</option>
+<option value="528">芳苑鄉</option>
+<option value="530">二水鄉</option>
+<option value="540">南投市</option>
+<option value="541">中寮鄉</option>
+<option value="542">草屯鎮</option>
+<option value="544">國姓鄉</option>
+<option value="545">埔里鎮</option>
+<option value="546">仁愛鄉</option>
+<option value="551">名間鄉</option>
+<option value="552">集集鎮</option>
+</select>
+                            <div style="display: none">
+                                <select id="sDivision2">
+                                        <option value='553' alt='B11'>水里鄉</option>
+                                        <option value='555' alt='B11'>魚池鄉</option>
+                                        <option value='556' alt='B11'>信義鄉</option>
+                                        <option value='557' alt='B11'>竹山鎮</option>
+                                        <option value='558' alt='B11'>鹿谷鄉</option>
+                                        <option value='599' alt='B12'>東區</option>
+                                        <option value='600' alt='B12'>西區</option>
+                                        <option value='602' alt='B13'>番路鄉</option>
+                                        <option value='603' alt='B13'>梅山鄉</option>
+                                        <option value='604' alt='B13'>竹崎鄉</option>
+                                        <option value='605' alt='B13'>阿里山鄉</option>
+                                        <option value='606' alt='B13'>中埔鄉</option>
+                                        <option value='607' alt='B13'>大埔鄉</option>
+                                        <option value='608' alt='B13'>水上鄉</option>
+                                        <option value='611' alt='B13'>鹿草鄉</option>
+                                        <option value='612' alt='B13'>太保市</option>
+                                        <option value='613' alt='B13'>朴子市</option>
+                                        <option value='614' alt='B13'>東石鄉</option>
+                                        <option value='615' alt='B13'>六腳鄉</option>
+                                        <option value='616' alt='B13'>新港鄉</option>
+                                        <option value='621' alt='B13'>民雄鄉</option>
+                                        <option value='622' alt='B13'>大林鎮</option>
+                                        <option value='623' alt='B13'>溪口鄉</option>
+                                        <option value='624' alt='B13'>義竹鄉</option>
+                                        <option value='625' alt='B13'>布袋鎮</option>
+                                        <option value='630' alt='B14'>斗南鎮</option>
+                                        <option value='631' alt='B14'>大埤鄉</option>
+                                        <option value='632' alt='B14'>虎尾鎮</option>
+                                        <option value='633' alt='B14'>土庫鎮</option>
+                                        <option value='634' alt='B14'>褒忠鄉</option>
+                                        <option value='635' alt='B14'>東勢鄉</option>
+                                        <option value='636' alt='B14'>臺西鄉</option>
+                                        <option value='637' alt='B14'>崙背鄉</option>
+                                        <option value='638' alt='B14'>麥寮鄉</option>
+                                        <option value='640' alt='B14'>斗六市</option>
+                                        <option value='643' alt='B14'>林內鄉</option>
+                                        <option value='646' alt='B14'>古坑鄉</option>
+                                        <option value='647' alt='B14'>莿桐鄉</option>
+                                        <option value='648' alt='B14'>西螺鎮</option>
+                                        <option value='649' alt='B14'>二崙鄉</option>
+                                        <option value='651' alt='B14'>北港鎮</option>
+                                        <option value='652' alt='B14'>水林鄉</option>
+                                        <option value='653' alt='B14'>口湖鄉</option>
+                                        <option value='654' alt='B14'>四湖鄉</option>
+                                        <option value='655' alt='B14'>元長鄉</option>
+                                        <option value='700' alt='B15'>中西區</option>
+                                        <option value='701' alt='B15'>東區</option>
+                                        <option value='702' alt='B15'>南區</option>
+                                        <option value='704' alt='B15'>北區</option>
+                                        <option value='708' alt='B15'>安平區</option>
+                                        <option value='709' alt='B15'>安南區</option>
+                                        <option value='710' alt='B15'>永康區</option>
+                                        <option value='711' alt='B15'>歸仁區</option>
+                                        <option value='712' alt='B15'>新化區</option>
+                                        <option value='713' alt='B15'>左鎮區</option>
+                                        <option value='714' alt='B15'>玉井區</option>
+                                        <option value='715' alt='B15'>楠西區</option>
+                                        <option value='716' alt='B15'>南化區</option>
+                                        <option value='717' alt='B15'>仁德區</option>
+                                        <option value='718' alt='B15'>關廟區</option>
+                                        <option value='719' alt='B15'>龍崎區</option>
+                                        <option value='720' alt='B15'>官田區</option>
+                                        <option value='721' alt='B15'>麻豆區</option>
+                                        <option value='722' alt='B15'>佳里區</option>
+                                        <option value='723' alt='B15'>西港區</option>
+                                        <option value='724' alt='B15'>七股區</option>
+                                        <option value='725' alt='B15'>將軍區</option>
+                                        <option value='726' alt='B15'>學甲區</option>
+                                        <option value='727' alt='B15'>北門區</option>
+                                        <option value='730' alt='B15'>新營區</option>
+                                        <option value='731' alt='B15'>後壁區</option>
+                                        <option value='732' alt='B15'>白河區</option>
+                                        <option value='733' alt='B15'>東山區</option>
+                                        <option value='734' alt='B15'>六甲區</option>
+                                        <option value='735' alt='B15'>下營區</option>
+                                        <option value='736' alt='B15'>柳營區</option>
+                                        <option value='737' alt='B15'>鹽水區</option>
+                                        <option value='741' alt='B15'>善化區</option>
+                                        <option value='742' alt='B15'>大內區</option>
+                                        <option value='743' alt='B15'>山上區</option>
+                                        <option value='744' alt='B15'>新市區</option>
+                                        <option value='745' alt='B15'>安定區</option>
+                                        <option value='800' alt='B17'>新興區</option>
+                                        <option value='801' alt='B17'>前金區</option>
+                                        <option value='802' alt='B17'>苓雅區</option>
+                                        <option value='803' alt='B17'>鹽埕區</option>
+                                        <option value='804' alt='B17'>鼓山區</option>
+                                        <option value='805' alt='B17'>旗津區</option>
+                                        <option value='806' alt='B17'>前鎮區</option>
+                                        <option value='807' alt='B17'>三民區</option>
+                                        <option value='811' alt='B17'>楠梓區</option>
+                                        <option value='812' alt='B17'>小港區</option>
+                                        <option value='813' alt='B17'>左營區</option>
+                                        <option value='814' alt='B17'>仁武區</option>
+                                        <option value='815' alt='B17'>大社區</option>
+                                        <option value='817' alt='B25'>東沙</option>
+                                        <option value='819' alt='B25'>南沙</option>
+                                        <option value='820' alt='B17'>岡山區</option>
+                                        <option value='821' alt='B17'>路竹區</option>
+                                        <option value='822' alt='B17'>阿蓮區</option>
+                                        <option value='823' alt='B17'>田寮區</option>
+                                        <option value='824' alt='B17'>燕巢區</option>
+                                        <option value='825' alt='B17'>橋頭區</option>
+                                        <option value='826' alt='B17'>梓官區</option>
+                                        <option value='827' alt='B17'>彌陀區</option>
+                                        <option value='828' alt='B17'>永安區</option>
+                                        <option value='829' alt='B17'>湖內區</option>
+                                        <option value='830' alt='B17'>鳳山區</option>
+                                        <option value='831' alt='B17'>大寮區</option>
+                                        <option value='832' alt='B17'>林園區</option>
+                                        <option value='833' alt='B17'>鳥松區</option>
+                                        <option value='840' alt='B17'>大樹區</option>
+                                        <option value='842' alt='B17'>旗山區</option>
+                                        <option value='843' alt='B17'>美濃區</option>
+                                        <option value='844' alt='B17'>六龜區</option>
+                                        <option value='845' alt='B17'>內門區</option>
+                                        <option value='846' alt='B17'>杉林區</option>
+                                        <option value='847' alt='B17'>甲仙區</option>
+                                        <option value='848' alt='B17'>桃源區</option>
+                                        <option value='849' alt='B17'>那瑪夏區</option>
+                                        <option value='851' alt='B17'>茂林區</option>
+                                        <option value='852' alt='B17'>茄萣區</option>
+                                        <option value='880' alt='B19'>馬公市</option>
+                                        <option value='881' alt='B19'>西嶼鄉</option>
+                                        <option value='882' alt='B19'>望安鄉</option>
+                                        <option value='883' alt='B19'>七美鄉</option>
+                                        <option value='884' alt='B19'>白沙鄉</option>
+                                        <option value='885' alt='B19'>湖西鄉</option>
+                                        <option value='890' alt='B23'>金沙鎮</option>
+                                        <option value='891' alt='B23'>金湖鎮</option>
+                                        <option value='892' alt='B23'>金寧鄉</option>
+                                        <option value='893' alt='B23'>金城鄉</option>
+                                        <option value='894' alt='B23'>烈嶼鄉</option>
+                                        <option value='896' alt='B23'>烏坵鄉</option>
+                                        <option value='900' alt='B20'>屏東市</option>
+                                        <option value='901' alt='B20'>三地門鄉</option>
+                                        <option value='902' alt='B20'>霧臺鄉</option>
+                                        <option value='903' alt='B20'>瑪家鄉</option>
+                                        <option value='904' alt='B20'>九如鄉</option>
+                                        <option value='905' alt='B20'>里港鄉</option>
+                                        <option value='906' alt='B20'>高樹鄉</option>
+                                        <option value='907' alt='B20'>鹽埔鄉</option>
+                                        <option value='908' alt='B20'>長治鄉</option>
+                                        <option value='909' alt='B20'>麟洛鄉</option>
+                                        <option value='911' alt='B20'>竹田鄉</option>
+                                        <option value='912' alt='B20'>內埔鄉</option>
+                                        <option value='913' alt='B20'>萬丹鄉</option>
+                                        <option value='920' alt='B20'>潮州鎮</option>
+                                        <option value='921' alt='B20'>泰武鄉</option>
+                                        <option value='922' alt='B20'>來義鄉</option>
+                                        <option value='923' alt='B20'>萬巒鄉</option>
+                                        <option value='924' alt='B20'>崁頂鄉</option>
+                                        <option value='925' alt='B20'>新埤鄉</option>
+                                        <option value='926' alt='B20'>南州鄉</option>
+                                        <option value='927' alt='B20'>林邊鄉</option>
+                                        <option value='928' alt='B20'>東港鎮</option>
+                                        <option value='929' alt='B20'>琉球鄉</option>
+                                        <option value='931' alt='B20'>佳冬鄉</option>
+                                        <option value='932' alt='B20'>新園鄉</option>
+                                        <option value='940' alt='B20'>枋寮鄉</option>
+                                        <option value='941' alt='B20'>枋山鄉</option>
+                                        <option value='942' alt='B20'>春日鄉</option>
+                                        <option value='943' alt='B20'>獅子鄉</option>
+                                        <option value='944' alt='B20'>車城鄉</option>
+                                        <option value='945' alt='B20'>牡丹鄉</option>
+                                        <option value='946' alt='B20'>恆春鎮</option>
+                                        <option value='947' alt='B20'>滿州鄉</option>
+                                        <option value='950' alt='B21'>臺東市</option>
+                                        <option value='951' alt='B21'>綠島鄉</option>
+                                        <option value='952' alt='B21'>蘭嶼鄉</option>
+                                        <option value='953' alt='B21'>延平鄉</option>
+                                        <option value='954' alt='B21'>卑南鄉</option>
+                                        <option value='955' alt='B21'>鹿野鄉</option>
+                                        <option value='956' alt='B21'>關山鎮</option>
+                                        <option value='957' alt='B21'>海端鄉</option>
+                                        <option value='958' alt='B21'>池上鄉</option>
+                                        <option value='959' alt='B21'>東河鄉</option>
+                                        <option value='961' alt='B21'>成功鎮</option>
+                                        <option value='962' alt='B21'>長濱鄉</option>
+                                        <option value='963' alt='B21'>太麻里鄉</option>
+                                        <option value='964' alt='B21'>金峰鄉</option>
+                                        <option value='965' alt='B21'>大武鄉</option>
+                                        <option value='966' alt='B21'>達仁鄉</option>
+                                        <option value='970' alt='B22'>花蓮市</option>
+                                        <option value='971' alt='B22'>新城鄉</option>
+                                        <option value='972' alt='B22'>秀林鄉</option>
+                                        <option value='973' alt='B22'>吉安鄉</option>
+                                        <option value='974' alt='B22'>壽豐鄉</option>
+                                        <option value='975' alt='B22'>鳳林鎮</option>
+                                        <option value='976' alt='B22'>光復鄉</option>
+                                        <option value='977' alt='B22'>豐濱鄉</option>
+                                        <option value='978' alt='B22'>瑞穗鄉</option>
+                                        <option value='979' alt='B22'>萬榮鄉</option>
+                                        <option value='981' alt='B22'>玉里鎮</option>
+                                        <option value='982' alt='B22'>卓溪鄉</option>
+                                        <option value='983' alt='B22'>富里鄉</option>
+                                        <option value='100' alt='A01'>中正區</option>
+                                        <option value='103' alt='A01'>大同區</option>
+                                        <option value='104' alt='A01'>中山區</option>
+                                        <option value='105' alt='A01'>松山區</option>
+                                        <option value='106' alt='A01'>大安區</option>
+                                        <option value='108' alt='A01'>萬華區</option>
+                                        <option value='110' alt='A01'>信義區</option>
+                                        <option value='111' alt='A01'>士林區</option>
+                                        <option value='112' alt='A01'>北投區</option>
+                                        <option value='114' alt='A01'>內湖區</option>
+                                        <option value='115' alt='A01'>南港區</option>
+                                        <option value='116' alt='A01'>文山區(木柵)</option>
+                                        <option value='117' alt='A01'>文山區(景美)</option>
+                                        <option value='200' alt='B01'>仁愛區</option>
+                                        <option value='201' alt='B01'>信義區</option>
+                                        <option value='202' alt='B01'>中正區</option>
+                                        <option value='203' alt='B01'>中山區</option>
+                                        <option value='204' alt='B01'>安樂區</option>
+                                        <option value='205' alt='B01'>暖暖區</option>
+                                        <option value='206' alt='B01'>七堵區</option>
+                                        <option value='207' alt='B02'>萬里區</option>
+                                        <option value='208' alt='B02'>金山區</option>
+                                        <option value='209' alt='B24'>南竿鄉</option>
+                                        <option value='210' alt='B24'>北竿鄉</option>
+                                        <option value='211' alt='B24'>莒光鄉</option>
+                                        <option value='212' alt='B24'>東引鄉</option>
+                                        <option value='220' alt='B02'>板橋區</option>
+                                        <option value='221' alt='B02'>汐止區</option>
+                                        <option value='222' alt='B02'>深坑區</option>
+                                        <option value='223' alt='B02'>石碇區</option>
+                                        <option value='224' alt='B02'>瑞芳區</option>
+                                        <option value='226' alt='B02'>平溪區</option>
+                                        <option value='227' alt='B02'>雙溪區</option>
+                                        <option value='228' alt='B02'>貢寮區</option>
+                                        <option value='231' alt='B02'>新店區</option>
+                                        <option value='232' alt='B02'>坪林區</option>
+                                        <option value='233' alt='B02'>烏來區</option>
+                                        <option value='234' alt='B02'>永和區</option>
+                                        <option value='235' alt='B02'>中和區</option>
+                                        <option value='236' alt='B02'>土城區</option>
+                                        <option value='237' alt='B02'>三峽區</option>
+                                        <option value='238' alt='B02'>樹林區</option>
+                                        <option value='239' alt='B02'>鶯歌區</option>
+                                        <option value='241' alt='B02'>三重區</option>
+                                        <option value='242' alt='B02'>新莊區</option>
+                                        <option value='243' alt='B02'>泰山區</option>
+                                        <option value='244' alt='B02'>林口區</option>
+                                        <option value='247' alt='B02'>蘆洲區</option>
+                                        <option value='248' alt='B02'>五股區</option>
+                                        <option value='249' alt='B02'>八里區</option>
+                                        <option value='251' alt='B02'>淡水區</option>
+                                        <option value='252' alt='B02'>三芝區</option>
+                                        <option value='253' alt='B02'>石門區</option>
+                                        <option value='260' alt='B03'>宜蘭市</option>
+                                        <option value='261' alt='B03'>頭城鎮</option>
+                                        <option value='262' alt='B03'>礁溪鄉</option>
+                                        <option value='263' alt='B03'>壯圍鄉</option>
+                                        <option value='264' alt='B03'>員山鄉</option>
+                                        <option value='265' alt='B03'>羅東鎮</option>
+                                        <option value='266' alt='B03'>三星鄉</option>
+                                        <option value='267' alt='B03'>大同鄉</option>
+                                        <option value='268' alt='B03'>五結鄉</option>
+                                        <option value='269' alt='B03'>冬山鄉</option>
+                                        <option value='270' alt='B03'>蘇澳鎮</option>
+                                        <option value='272' alt='B03'>南澳鄉</option>
+                                        <option value='290' alt='B26'>釣魚台列嶼</option>
+                                        <option value='298' alt='B04'>東區</option>
+                                        <option value='299' alt='B04'>北區</option>
+                                        <option value='300' alt='B04'>香山區</option>
+                                        <option value='302' alt='B05'>竹北市</option>
+                                        <option value='303' alt='B05'>湖口鄉</option>
+                                        <option value='304' alt='B05'>新豐鄉</option>
+                                        <option value='305' alt='B05'>新埔鎮</option>
+                                        <option value='306' alt='B05'>關西鎮</option>
+                                        <option value='307' alt='B05'>芎林鄉</option>
+                                        <option value='308' alt='B05'>寶山鄉</option>
+                                        <option value='310' alt='B05'>竹東鎮</option>
+                                        <option value='311' alt='B05'>五峰鄉</option>
+                                        <option value='312' alt='B05'>橫山鄉</option>
+                                        <option value='313' alt='B05'>尖石鄉</option>
+                                        <option value='314' alt='B05'>北埔鄉</option>
+                                        <option value='315' alt='B05'>峨眉鄉</option>
+                                        <option value='320' alt='B06'>中壢市</option>
+                                        <option value='324' alt='B06'>平鎮市</option>
+                                        <option value='325' alt='B06'>龍潭鄉</option>
+                                        <option value='326' alt='B06'>楊梅鎮</option>
+                                        <option value='327' alt='B06'>新屋鄉</option>
+                                        <option value='328' alt='B06'>觀音鄉</option>
+                                        <option value='330' alt='B06'>桃園市</option>
+                                        <option value='333' alt='B06'>龜山鄉</option>
+                                        <option value='334' alt='B06'>八德市</option>
+                                        <option value='335' alt='B06'>大溪鎮</option>
+                                        <option value='336' alt='B06'>復興鄉</option>
+                                        <option value='337' alt='B06'>大園鄉</option>
+                                        <option value='338' alt='B06'>蘆竹鄉</option>
+                                        <option value='350' alt='B07'>竹南鎮</option>
+                                        <option value='351' alt='B07'>頭份鎮</option>
+                                        <option value='352' alt='B07'>三灣鄉</option>
+                                        <option value='353' alt='B07'>南庄鄉</option>
+                                        <option value='354' alt='B07'>獅潭鄉</option>
+                                        <option value='356' alt='B07'>後龍鎮</option>
+                                        <option value='357' alt='B07'>通霄鎮</option>
+                                        <option value='358' alt='B07'>苑裡鎮</option>
+                                        <option value='360' alt='B07'>苗栗市</option>
+                                        <option value='361' alt='B07'>造橋鄉</option>
+                                        <option value='362' alt='B07'>頭屋鄉</option>
+                                        <option value='363' alt='B07'>公館鄉</option>
+                                        <option value='364' alt='B07'>大湖鄉</option>
+                                        <option value='365' alt='B07'>泰安鄉</option>
+                                        <option value='366' alt='B07'>銅鑼鄉</option>
+                                        <option value='367' alt='B07'>三義鄉</option>
+                                        <option value='368' alt='B07'>西湖鄉</option>
+                                        <option value='369' alt='B07'>卓蘭鎮</option>
+                                        <option value='400' alt='B08'>中區</option>
+                                        <option value='401' alt='B08'>東區</option>
+                                        <option value='402' alt='B08'>南區</option>
+                                        <option value='403' alt='B08'>西區</option>
+                                        <option value='404' alt='B08'>北區</option>
+                                        <option value='406' alt='B08'>北屯區</option>
+                                        <option value='407' alt='B08'>西屯區</option>
+                                        <option value='408' alt='B08'>南屯區</option>
+                                        <option value='411' alt='B08'>太平區</option>
+                                        <option value='412' alt='B08'>大里區</option>
+                                        <option value='413' alt='B08'>霧峰區</option>
+                                        <option value='414' alt='B08'>烏日區</option>
+                                        <option value='420' alt='B08'>豐原區</option>
+                                        <option value='421' alt='B08'>后里區</option>
+                                        <option value='422' alt='B08'>石岡區</option>
+                                        <option value='423' alt='B08'>東勢區</option>
+                                        <option value='424' alt='B08'>和平區</option>
+                                        <option value='426' alt='B08'>新社區</option>
+                                        <option value='427' alt='B08'>潭子區</option>
+                                        <option value='428' alt='B08'>大雅區</option>
+                                        <option value='429' alt='B08'>神岡區</option>
+                                        <option value='432' alt='B08'>大肚區</option>
+                                        <option value='433' alt='B08'>沙鹿區</option>
+                                        <option value='434' alt='B08'>龍井區</option>
+                                        <option value='435' alt='B08'>梧棲區</option>
+                                        <option value='436' alt='B08'>清水區</option>
+                                        <option value='437' alt='B08'>大甲區</option>
+                                        <option value='438' alt='B08'>外埔區</option>
+                                        <option value='439' alt='B08'>大安區</option>
+                                        <option value='500' alt='B10'>彰化市</option>
+                                        <option value='502' alt='B10'>芬園鄉</option>
+                                        <option value='503' alt='B10'>花壇鄉</option>
+                                        <option value='504' alt='B10'>秀水鄉</option>
+                                        <option value='505' alt='B10'>鹿港鎮</option>
+                                        <option value='506' alt='B10'>福興鄉</option>
+                                        <option value='507' alt='B10'>線西鄉</option>
+                                        <option value='508' alt='B10'>和美鎮</option>
+                                        <option value='509' alt='B10'>伸港鄉</option>
+                                        <option value='510' alt='B10'>員林鎮</option>
+                                        <option value='511' alt='B10'>社頭鄉</option>
+                                        <option value='512' alt='B10'>永靖鄉</option>
+                                        <option value='513' alt='B10'>埔心鄉</option>
+                                        <option value='514' alt='B10'>溪湖鎮</option>
+                                        <option value='515' alt='B10'>大村鄉</option>
+                                        <option value='516' alt='B10'>埔鹽鄉</option>
+                                        <option value='520' alt='B10'>田中鎮</option>
+                                        <option value='521' alt='B10'>北斗鎮</option>
+                                        <option value='522' alt='B10'>田尾鄉</option>
+                                        <option value='523' alt='B10'>埤頭鄉</option>
+                                        <option value='524' alt='B10'>溪州鄉</option>
+                                        <option value='525' alt='B10'>竹塘鄉</option>
+                                        <option value='526' alt='B10'>二林鎮</option>
+                                        <option value='527' alt='B10'>大城鄉</option>
+                                        <option value='528' alt='B10'>芳苑鄉</option>
+                                        <option value='530' alt='B10'>二水鄉</option>
+                                        <option value='540' alt='B11'>南投市</option>
+                                        <option value='541' alt='B11'>中寮鄉</option>
+                                        <option value='542' alt='B11'>草屯鎮</option>
+                                        <option value='544' alt='B11'>國姓鄉</option>
+                                        <option value='545' alt='B11'>埔里鎮</option>
+                                        <option value='546' alt='B11'>仁愛鄉</option>
+                                        <option value='551' alt='B11'>名間鄉</option>
+                                        <option value='552' alt='B11'>集集鎮</option>
+                                </select>
+                            </div>
+
+	<div class="controls add">
+		<input data-val="true" data-val-required="請輸入地址 id="donateInfo_RecAddress" name="donateInfo.RecAddress" placeholder="請輸入地址" type="text" value="" />
+		<span class="field-validation-valid" data-valmsg-for="donateInfo.RecAddress" data-valmsg-replace="true" style="color:red;!important"></span>
+        </div>
+	</div>
+     </form>
+	 
+	 
+	<div class="set">
+	<label class="control-label col-sm-2">何處得知加樂車HAPPY+(可複選)</label>
+	<div class="col-sm6">
+	<form role="form">
+    <label class="checkbox-inline">
+      <input type="checkbox" value="">Facebook
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" value="">Youtube
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" value="">單車店
+	</label>
+    <label class="checkbox-inline">
+      <input type="checkbox" value="">單車雜誌
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" value="">其他
+    </label>
+	
+	</div>
+  </form>
+  </div>
+  <br><br>
+    <div class="form-group">        
+      <div class="col-sm-offset-5 col-sm-7">
+        <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+    </div>
+  </form>
+
+<div>
+
+  
+  
 </div>  
   
 <div id="section61" class="container-fluid">
