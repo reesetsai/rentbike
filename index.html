@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Case</title>
+  <title>福隆驛站</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.5.3/css/bootstrapValidator.css"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.js"></script>
+
 </head>
 <style>
   .carousel-inner > .item > img,
@@ -20,35 +24,182 @@
   .navbar navbar-inverse{
 		float:none;
 		width:100%;
-		height:auto;}
+		height:auto;
+	}
+		
  .content{
 		text-align: center;
 		width:100%;
 		display: block;}
-  }
+	}
   
-   @media only screen  and (max-width:480px) {
-  .navbar navbar-inverse{
-		float:none;
-		width:100%;
-		height:auto;}
- .content{
+	@media only screen  and (max-width:480px) {
+		.navbar navbar-inverse{
+			float:none;
+			width:100%;
+			height:auto;
+			}
+	.content{
 		text-align: center;
 		width:100%;
 		display: block;}
+	}
+	.set{
+	clear: both;
+	}
+	.form-group{
+		width:100%;
+		clear: both;
+	}
+	
 
-		}
-.set{
-clear: both;
-}
-	
-	
- 
- 
 </style>
 
+<script>
 
 
+var weight = [8,7,6,5,4,3,2,1,1];
+var ide = "ABCDEFGHJKLMNPQRXTUVXYWZIO";
+
+function checkid(id){
+
+	id=id.toUpperCase();
+	
+	if(firstlettererr(id)){
+	alert("第一個字母應為英文");
+	}
+	else if(numberlist(id)){
+	alert("身分證為10碼,請在確認一次!");
+	}
+	else if(first(id) === 0 && testid(id)=== 0){
+	alert("歡迎花東鄉親,花東鄉親填問券有優惠!!");
+	}
+	else if(testid(id)=== 0){
+	alert("填寫完畢謝謝您!!我們會盡速聯繫您");
+	}
+	else if(testid(id)=== 1){
+	alert("不正確的身分證請在檢查一次");
+	}
+	}
+
+
+
+
+function firstlettererr(id)
+{
+var fl=id[0];
+if(fl >= 'A' && fl <='Z') return 0;
+else return 1;
+}
+
+function first(id)
+{
+var fl=id[0];
+if(fl == 'V' || fl =='U') return 0;
+else return 1;
+}
+
+function numberlist(id){
+return (id.length == 10) ? 0 : 1; 
+}
+
+function testid(id){
+	var head = 10 + ide.indexOf(id[0]);
+
+    var result = Math.floor(head/10)+ (head%10)*9;
+	
+	for(var i = 1;i <10;i++){
+	result += id[i]*weight[i-1];
+	}
+	if(result % 10 === 0)
+	{
+	return 0;
+	}
+	else{return 1;
+}}
+
+
+
+</script>
+<script type= "text/javascript">
+
+		$(document).ready(function (){
+			var validator = $("#registration-form").bootstrapValidator({
+				fields : {
+					email : {
+						message : "請輸入email",
+				
+						validators :{
+							notEmpty :{
+								message : "請輸入Email"
+						},
+						stringLength : {
+							min : 6,
+							max : 35,
+							message : "Email長度應介於6位到35位"
+						},
+						emailAddress :{
+							message : "為無效的Email"
+						}
+					}
+				
+				},
+					username :{
+						validators: {
+							notEmpty: {
+								message: '請輸入姓名'
+                    },
+						stringLength: {
+							min: 2,
+							max: 10,
+							message: '姓名最少有兩個字'
+                    },
+						regexp: {		
+							regexp: /^[a-zA-Z0-9_\.]+$/,
+							message: '姓名不得有符號'
+                    }
+					
+                }
+				},
+					phone : {
+						validators: {
+							notEmpty : {
+							message: '請輸入電話'
+							},
+							regexp: {
+							regexp:  /^[09]{2}[0-9]{8}$/,
+							message: '為無效的手機號碼'
+                    }
+						}
+					},
+					id : {
+					validators: {
+							notEmpty : {
+							message: '請輸入身分證字號'
+							},
+							regexp: {
+							regexp:  /^[a-zA-Z]{1}[0-9]{9}$/,
+							message: '為無效的身分證'
+						}
+					}
+					},
+					 "where[]" :{
+						  validators: {
+                    notEmpty: {
+                        message: '至少勾選一個'
+                    }
+                }
+            },
+		}
+					
+			
+	});
+
+});
+
+
+
+</script>
 <body>
 
 <nav class="navbar navbar-inverse">
@@ -191,29 +342,38 @@ clear: both;
   <h1>問卷調查</h1>
   <p>填寫問卷即送優待券!!</p>
   
-	<form class="form-horizontal" role="form">
+	<form class="form-horizontal" role="form" id = "registration-form" action ="#">
     <div class="form-group">
-      <label class="control-label col-sm-2" for="name">姓名:</label>
-      <div class="col-sm-5">
-        <input type="email" class="form-control" id="email" placeholder="請輸入您的姓名">
+      <label class="control-label col-sm-2" for="username">姓名:</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" id="username" placeholder="請輸入您的姓名" name = "username" >
       </div>
     </div>
+	
+	<div class="form-group">
+      <label class="control-label col-sm-2" for="id">身分證字號:</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" id="id" placeholder="請輸入您的身分證字號" name = "id" onsubmit="return checkid()" method="post"> 
+      </div>
+	  
+    </div>	
     <div class="form-group">
-      <label class="control-label col-sm-2" for="phonenumber">電話號碼:</label>
-      <div class="col-sm-5">          
-        <input type="text" class="form-control" id="phonenumber" placeholder="請輸入您的電話號碼">
+      <label class="control-label col-sm-2" for="phone">手機號碼:</label>
+      <div class="col-sm-6">          
+        <input type="text" class="form-control" id="phone" placeholder="EX:0912345678" name ="phone" >
       </div>
 	  </div>
 	<div class="form-group">
       <label class="control-label col-sm-2" for="email">EMAIL:</label>
-      <div class="col-sm-5">          
-        <input type="text" class="form-control" id="email" placeholder="請輸入email">
+      <div class="col-sm-6">          
+        <input type="text" class="form-control" id="email" placeholder="請輸入email" name = "email">
       </div>
     </div>
 	<div class="form-group">
-      <label class="control-label col-sm-2" for="where">居住地點:</label>
-      <div class="col-sm-5">
-      <select id="donateInfo_City" name="donateInfo.City"><option value="A01">台北市</option>
+      <label class="control-label col-sm-2" for="live">居住地點:</label>
+      <div class="col-sm-4">
+      <select id="donateInfo_City" name="donateInfo.City">
+	  <option value="A01">台北市</option>
 <option value="B01">基隆市</option>
 <option value="B02">新北市</option>
 <option value="B03">宜蘭縣</option>
@@ -993,27 +1153,27 @@ clear: both;
 		<span class="field-validation-valid" data-valmsg-for="donateInfo.RecAddress" data-valmsg-replace="true" style="color:red;!important"></span>
         </div>
 	</div>
-     </form>
-	 
-	 
+    
+	
+	 <br>
 	<div class="set">
 	<label class="control-label col-sm-2">何處得知加樂車HAPPY+(可複選)</label>
 	<div class="col-sm6">
 	<form role="form">
     <label class="checkbox-inline">
-      <input type="checkbox" value="">Facebook
+      <input type="checkbox" name="where[]" value="facebook">Facebook
     </label>
     <label class="checkbox-inline">
-      <input type="checkbox" value="">Youtube
+      <input type="checkbox" name="where[]" value="youtube">Youtube
     </label>
     <label class="checkbox-inline">
-      <input type="checkbox" value="">單車店
+      <input type="checkbox" name="where[]" value="bikestore">單車店
 	</label>
     <label class="checkbox-inline">
-      <input type="checkbox" value="">單車雜誌
+      <input type="checkbox" name="where[]" value="mag">單車雜誌
     </label>
     <label class="checkbox-inline">
-      <input type="checkbox" value="">其他
+      <input type="checkbox" name="where[]" value="other">其他
     </label>
 	
 	</div>
@@ -1022,16 +1182,12 @@ clear: both;
   <br><br>
     <div class="form-group">        
       <div class="col-sm-offset-5 col-sm-7">
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type=submit >輸入確認</button> <button type=reset>重新輸入</button>
       </div>
     </div>
   </form>
 
-<div>
-
   
-  
-</div>  
   
 <div id="section61" class="container-fluid">
   <h1>交通指南</h1>
