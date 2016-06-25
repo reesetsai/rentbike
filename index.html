@@ -10,7 +10,7 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.js"></script>
-
+	<script src="http://maps.googleapis.com/maps/api/js"></script>
 </head>
 <style>
   .carousel-inner > .item > img,
@@ -31,8 +31,12 @@
 		text-align: center;
 		width:100%;
 		display: block;}
+	
+	#googleMap{
+		width:100%;
+		margin: auto;
 	}
-  
+	}
 	@media only screen  and (max-width:480px) {
 		.navbar navbar-inverse{
 			float:none;
@@ -52,75 +56,41 @@
 		clear: both;
 	}
 	
+	
 
 </style>
 
 <script>
 
+var myCenter=new google.maps.LatLng(25.0141,121.95354);
 
-/*var weight = [8,7,6,5,4,3,2,1,1];
-var ide = "ABCDEFGHJKLMNPQRXTUVXYWZIO";
-
-function checkid(id){
-
-	id=id.toUpperCase();
-	
-	if(firstlettererr(id)){
-	alert("第一個字母應為英文");
-	}
-	else if(numberlist(id)){
-	alert("身分證為10碼,請在確認一次!");
-	}
-	else if(first(id) === 0 && testid(id)=== 0){
-	alert("歡迎花東鄉親,花東鄉親填問券有優惠!!");
-	}
-	else if(testid(id)=== 0){
-	alert("填寫完畢謝謝您!!我們會盡速聯繫您");
-	}
-	else if(testid(id)=== 1){
-	alert("不正確的身分證請在檢查一次");
-	}
-	}
-
-
-
-
-function firstlettererr(id)
+function initialize()
 {
-var fl=id[0];
-if(fl >= 'A' && fl <='Z') return 0;
-else return 1;
+var mapProp = {
+  center:myCenter,
+  zoom:17,
+  mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var marker=new google.maps.Marker({
+  position:myCenter,
+  });
+
+marker.setMap(map);
+
+var infowindow = new google.maps.InfoWindow({
+  content:"福隆驛站<br>新北市貢寮區福隆荖寮街15號"
+  });
+
+infowindow.open(map,marker);
 }
 
-function first(id)
-{
-var fl=id[0];
-if(fl == 'V' || fl =='U') return 0;
-else return 1;
-}
-
-function numberlist(id){
-return (id.length == 10) ? 0 : 1; 
-}
-
-function testid(id){
-	var head = 10 + ide.indexOf(id[0]);
-
-    var result = Math.floor(head/10)+ (head%10)*9;
-	
-	for(var i = 1;i <10;i++){
-	result += value[i]*weight[i-1];
-	}
-	if(result % 10 === 0)
-	{
-	return 0;
-	}
-	else{return 1;
-}}
-*/
-
+google.maps.event.addDomListener(window, 'load', initialize);
 
 </script>
+
 <script type= "text/javascript">
 
 		$(document).ready(function (){
@@ -215,7 +185,6 @@ function testid(id){
 										valid: true
 										
 									}
-									alert("歡迎花東鄉親")
 								}
 								if(result %10 === 0 ){
 									return{
@@ -236,11 +205,16 @@ function testid(id){
                 }
             },
 		}
-					
+		
 			
 	});
+	
+});	
+	
+	
+	
 
-});
+
 
 
 
@@ -418,6 +392,7 @@ function testid(id){
       <label class="control-label col-sm-2" for="live">居住地點:</label>
       <div class="col-sm-4">
       <select id="donateInfo_City" name="donateInfo.City">
+	  </div>
 	  <option value="A01">台北市</option>
 <option value="B01">基隆市</option>
 <option value="B02">新北市</option>
@@ -1198,6 +1173,7 @@ function testid(id){
 		<span class="field-validation-valid" data-valmsg-for="donateInfo.RecAddress" data-valmsg-replace="true" style="color:red;!important"></span>
         </div>
 	</div>
+	
     
 	
 	 <br>
@@ -1220,24 +1196,23 @@ function testid(id){
     <label class="checkbox-inline">
       <input type="checkbox" name="where[]" value="other">其他
     </label>
-	
-	</div>
   </form>
   </div>
-  <br><br>
+  </div>
+  
     <div class="form-group">        
       <div class="col-sm-offset-5 col-sm-7">
         <button type=submit >輸入確認</button> <button type=reset>重新輸入</button>
       </div>
     </div>
   </form>
+   
 
   
   
 <div id="section61" class="container-fluid">
   <h1>交通指南</h1>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+  <div id="googleMap" style="width:300px;height:380px;"></div>
 </div>
 <div id="section62" class="container-fluid">
   <h1>FB社群</h1>
