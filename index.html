@@ -98,6 +98,12 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
 <script type= "text/javascript">
 
+$(document).ready(function(){
+    $("#myBtn").click(function(){
+        $("#myModal1").modal({backdrop: false});
+    });
+
+});
 		$(document).ready(function (){
 			var validator = 
 				$("#registration-form").
@@ -146,7 +152,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 							}
 						}
 					},
-						id : {
+						ide : {
 							validators: {
 								notEmpty: {
 									message: '身分證字號不得空白'
@@ -198,7 +204,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
                         }
                     }
                 },
-							"where[]" :{
+							"where1" :{
 								validators: {
 									notEmpty: {
 												message: '至少勾選一個'
@@ -250,7 +256,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#myModal" role="button" class="btn" data-toggle="modal">登入</a></li>
+        <li><a href="#myModal" data-toggle="modal"> <span class="glyphicon glyphicon-log-in"></span> 登入</a></li>
     <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
     
@@ -262,7 +268,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
         </div>
         <div class="modal-body" >
 
-          <form class = "form-horizontal" method="post" action ="checklogin.php" >
+          <form class = "form-horizontal" method="post" action ="/login/checklogin.php">
           <div class="form-group">
           	   <label class="control-label col-sm-2" for="username">帳號:</label>
           	   <div class="col-sm-5"> 
@@ -284,14 +290,15 @@ google.maps.event.addDomListener(window, 'load', initialize);
 
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <a href="#" class="btn btn-default" >註冊</a>
+          <button type="button" class="btn btn-default" data-dismiss="modal">關閉</button>
         </div>
       </div>
       
     </div>
   </div>
 
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> 登出</a></li>
       </ul>
     </div>
   </div>
@@ -402,9 +409,23 @@ google.maps.event.addDomListener(window, 'load', initialize);
   
  <div id="section" class="container-fluid">
   <h1>問卷調查</h1>
-  <p>填寫問卷即送優待券!!</p>
+<button type="button" class="btn btn-info btn-md" id="myBtn">填寫問卷即送優待券!!</button>
+
+ <!-- Modal -->
+  <div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog modal-lg">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"></button>
+
+        <h4 class="modal-title">填問券送好禮</h4>
+        </div>
+        <div class="modal-body">
   
-	<form class="form-horizontal" role="form" id = "registration-form" action ="#">
+	<form class="form-horizontal" role="form" id = "registration-form" method="post" 
+  action ="/login/sendform.php">
     <div class="form-group">
       <label class="control-label col-sm-2" for="username">姓名:</label>
       <div class="col-sm-6">
@@ -415,7 +436,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 	<div class="form-group">
       <label class="control-label col-sm-2" for="id">身分證字號:</label>
       <div class="col-sm-6">
-        <input type="text" class="form-control" id="id" placeholder="請輸入您的身分證字號" name = "id" style="text-transform:uppercase;"> 
+        <input type="text" class="form-control" id="ide" placeholder="請輸入您的身分證字號" name = "ide" style="text-transform:uppercase;"> 
       </div>
 	  
     </div>	
@@ -434,9 +455,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
 	<div class="form-group">
       <label class="control-label col-sm-2" for="live">居住地點:</label>
       <div class="col-sm-4">
-      <select id="donateInfo_City" name="donateInfo.City">
-	  </div>
-	  <option value="A01">台北市</option>
+      <select id="donateInfo_City" name="donateInfo_City">
+    <option value="A01">台北市</option>
 <option value="B01">基隆市</option>
 <option value="B02">新北市</option>
 <option value="B03">宜蘭縣</option>
@@ -461,7 +481,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
 <option value="B25">南海諸島</option>
 <option value="B26">釣漁台列嶼</option>
 </select>
-       <select id="donateInfo_Division" name="donateInfo.Division"><option value="553">水里鄉</option>
+
+       <select id="donateInfo_Division" name="donateInfo_Division"><option value="553">水里鄉</option>
 <option value="555">魚池鄉</option>
 <option value="556">信義鄉</option>
 <option value="557">竹山鎮</option>
@@ -1210,36 +1231,35 @@ google.maps.event.addDomListener(window, 'load', initialize);
                                         <option value='552' alt='B11'>集集鎮</option>
                                 </select>
                             </div>
-
-	<div class="controls add">
-		<input data-val="true" data-val-required="請輸入地址 id="donateInfo_RecAddress" name="donateInfo.RecAddress" placeholder="請輸入地址" type="text" value="" />
+                          </div>
+                        </div>
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-5">
+		<input data-val="true" data-val-required="請輸入地址 id="donateInfo_RecAddress" name="donateInfo_RecAddress" placeholder="請輸入地址" type="text" value="" />
 		<span class="field-validation-valid" data-valmsg-for="donateInfo.RecAddress" data-valmsg-replace="true" style="color:red;!important"></span>
         </div>
-	</div>
+        </div>
+	
 	
     
-	
-	 <br>
-	<div class="set">
+	<div class="form-group">
 	<label class="control-label col-sm-2">何處得知加樂車HAPPY+(可複選)</label>
 	<div class="col-sm6">
-	<form role="form">
     <label class="checkbox-inline">
-      <input type="checkbox" name="where[]" value="facebook">Facebook
+      <input type="checkbox" name="where1" value="facebook">Facebook
     </label>
     <label class="checkbox-inline">
-      <input type="checkbox" name="where[]" value="youtube">Youtube
+      <input type="checkbox" name="where1" value="youtube">Youtube
     </label>
     <label class="checkbox-inline">
-      <input type="checkbox" name="where[]" value="bikestore">單車店
+      <input type="checkbox" name="where1" value="bikestore">單車店
 	</label>
     <label class="checkbox-inline">
-      <input type="checkbox" name="where[]" value="mag">單車雜誌
+      <input type="checkbox" name="where1" value="mag">單車雜誌
     </label>
     <label class="checkbox-inline">
-      <input type="checkbox" name="where[]" value="other">其他
+      <input type="checkbox" name="where1" value="other">其他
     </label>
-  </form>
   </div>
   </div>
   
@@ -1249,8 +1269,14 @@ google.maps.event.addDomListener(window, 'load', initialize);
       </div>
     </div>
   </form>
-   
-
+ </div>
+		<div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+</div>
+</div>
+</div>
+</div>
   
   
 <div id="section61" class="container-fluid">
@@ -1262,7 +1288,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
   <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
   <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
 </div>
-</div>
+
+
 
 <footer class="text-center">
   <a class="up-arrow" href="#myNavbar" data-toggle="tooltip" title="TO TOP">
