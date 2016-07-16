@@ -103,7 +103,12 @@ $(document).ready(function(){
         $("#myModal1").modal({backdrop: false});
     });
 
-});
+RetrieveCityData();
+            $('#donateInfo_City').change(function () {
+                RetrieveCityData();
+            });
+    });
+
 		$(document).ready(function (){
 			var validator = 
 				$("#registration-form").
@@ -219,8 +224,12 @@ $(document).ready(function(){
 		});
 	
 });	
-	
-	
+function RetrieveCityData() {
+            var selectedCity = $('#donateInfo_City option:selected').val();
+            $("#donateInfo_Division").html('');
+            $("#sDivision2 option[alt*=" + selectedCity + "]").clone().appendTo("#donateInfo_Division");
+        }
+
 	
 
 

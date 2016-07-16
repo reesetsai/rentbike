@@ -20,15 +20,24 @@ $donateInfo_RecAddress= $_POST["donateInfo_RecAddress"];
 $where1= $_POST["where1"];
 echo '<pre>',print_r($_POST),'</pre>';
 // Insert form to table
+if (!empty($username) && !empty($id1) && !empty($phone) && !empty($email) && 
+	!empty($donateInfo_City) && !empty($donateInfo_Division) && !empty($donateInfo_RecAddress) && !empty($where1)) {
+	
+
 $query = "INSERT INTO formdask (username, id1, phone, donateInfo_City, donateInfo_Division, donateInfo_RecAddress, where1,email)
  VALUES('$username','$id1','$phone','$donateInfo_City','$donateInfo_Division',
  		'$donateInfo_RecAddress','$where1','$email')";
 echo "$query<br>";
 
+}
+else{
+	echo 'you need check form again';
+}
+
 $result = $mysqli->query($query);
 if ($result) {
 	
-	echo 'Thank you<br>';
+	echo 'Thank you' . ' ' . $username .'<br>';
 } else {
 	echo("Input data is fail<br>");
 }
@@ -42,13 +51,13 @@ $tabledump = $create[1];
 echo "$tabledump<br>";
 
 // send mail to user
-$query = "SELECT email FROM formdask";
+$query = "SELECT * FROM formdask WHERE email = $email";
 $result = $mysqli->query($query);
-echo "$row<br>";
+echo "$result";
 
-if($row = 1){ 
+if($result){ 
 	$msg = "this is a test.\n";
-	$TO = $row["email"];
+	$TO = $_POST["email"];
 	$Form = 'u5431269@gmail.com';
 	mail( $TO, $msg, 'From:' . $Form);
 	echo 'Send to: ' . $TO . '<br>';
