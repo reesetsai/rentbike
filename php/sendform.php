@@ -39,7 +39,7 @@ if ($result) {
 	
 	echo 'Thank you' . ' ' . $username .'<br>';
 } else {
-	echo("Input data is fail<br>");
+	echo("Input data is fail<br> check it again");
 }
 
 echo "You original db construct<br>";
