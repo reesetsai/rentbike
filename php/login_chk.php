@@ -1,16 +1,12 @@
 <?php
-
+session_start();
 // Connect to server and select databse.
 require_once("config.php");
 
 // Connect to server 
 
-$mysqli = new mysqli($db_host, $db_username, $db_password, $db_name);
-if($mysqli->connect_error) {
-	die('Error : ('. $mysqli->connect_errno .') '. $mysqli->connect_error);
-}
 
-echo 'DB connect success<br>';
+
 
 // username and password sent from form 
 $username= $_POST["username"];
@@ -28,30 +24,31 @@ if (get_magic_quotes_gpc()) {
 $sql="SELECT * FROM $tbl_name WHERE username='$username' and password='$password'";
 $result=mysql_query($sql);
 */
-echo "Username: $username<br>";
-echo "pass: $user_password<br>";	
+	
 //MySqli Select Query with prepared statment.
 if ($stmt = $mysqli->prepare("SELECT id, username, password FROM members WHERE username = ? and password = ?")) {
-	echo 'MySqli select Query';
+	
 	$stmt->bind_param('ss', $username, $user_password);
 	$stmt->execute();
 	$stmt->store_result();
-	if ($stmt->num_rows != 1) {
-		echo "The username was not found. Or some errors.";
-		$stmt->close();
-		$stmt->free_result();
-		$mysqli->close();
+	// get variables from result.
+	$stmt->bind_result($id, $username, $db_password);
+	$stmt->fetch();
 
-	} else {
-		// get variables from result.
-		$stmt->bind_result($id, $username, $db_password);
-		if ($stmt->fetch()) {
-			echo "<p>id : {$id}, user : {$username} wellcome.</p>";	
+	if ($stmt->num_rows == 1) {
+		$_SESSION['user']         = $username;
+		
+	} 
+	else {
+		echo "login failed";
 		}
-		$stmt->close();
-		$stmt->free_result();
-		$mysqli->close();
 	}
-}
+	if(isset($_SESSION['user'])){
+		header("Location: /login/login1.php");
+	}
+	else{
+		echo "set session failed";
+	}
+
 
 ?>
