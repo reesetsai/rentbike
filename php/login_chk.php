@@ -6,7 +6,7 @@ require_once("config.php");
 // Connect to server 
 
 
-
+echo 'DB connect success<br>';
 
 // username and password sent from form 
 $username= $_POST["username"];
@@ -24,27 +24,28 @@ if (get_magic_quotes_gpc()) {
 $sql="SELECT * FROM $tbl_name WHERE username='$username' and password='$password'";
 $result=mysql_query($sql);
 */
-	
+echo "Username: $username<br>";
+echo "pass: $user_password<br>";	
 //MySqli Select Query with prepared statment.
 if ($stmt = $mysqli->prepare("SELECT id, username, password FROM members WHERE username = ? and password = ?")) {
-	
+	echo 'MySqli select Query';
 	$stmt->bind_param('ss', $username, $user_password);
 	$stmt->execute();
 	$stmt->store_result();
 	// get variables from result.
-	$stmt->bind_result($id, $username, $db_password);
-	$stmt->fetch();
+		$stmt->bind_result($id, $username, $db_password);
+		$stmt->fetch();
 
 	if ($stmt->num_rows == 1) {
 		$_SESSION['user']         = $username;
-		
+		echo "<br>wellcome" . $_SESSION['user'];
 	} 
 	else {
 		echo "login failed";
 		}
 	}
 	if(isset($_SESSION['user'])){
-		header("Location: /login/login1.php");
+		echo '<meta http-equiv=REFRESH CONTENT=2;url=admin.php>';
 	}
 	else{
 		echo "set session failed";
