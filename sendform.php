@@ -97,9 +97,7 @@ if (!empty($username) && !empty($id1) && !empty($phone) && !empty($email) &&
 	!empty($donateInfo_City) && !empty($donateInfo_Division) && !empty($donateInfo_RecAddress) && !empty($where1)) {
 	
 
-$query = "INSERT INTO formdask (username, id1, phone, donateInfo_City, donateInfo_Division, donateInfo_RecAddress, where1,email)
- VALUES('$username','$id1','$phone','$donateInfo_City','$donateInfo_Division',
- 		'$donateInfo_RecAddress','$where1','$email')";
+
 echo "$query<br>";
 
 }
@@ -110,7 +108,7 @@ else{
 $result = $mysqli->query($query);
 if ($result) {
 	
-	echo 'Thank you' . ' ' . $username .'<br>';
+	
 } else {
 	echo("Input data is fail<br> check it again");
 }
@@ -122,22 +120,3 @@ $create = $table_construct->fetch_array(MYSQLI_NUM);
 $tabledump = $create[1];
 
 echo "$tabledump<br>";
-
-// send mail to user
-$query = "SELECT * FROM formdask WHERE email = $email";
-$result = $mysqli->query($query);
-echo "$result";
-
-if($result){ 
-	$msg = "this is a test.\n";
-	$TO = $_POST["email"];
-	$Form = 'u5431269@gmail.com';
-	mail( $TO, $msg, 'From:' . $Form);
-	echo 'Send to: ' . $TO . '<br>';
-}
-else{
-	echo "there is something wrong";
-}
-
-
-$mysqli->close();
