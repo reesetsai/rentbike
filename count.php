@@ -19,6 +19,28 @@
 	$num2 = $_POST["num2"];
 }
 
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>計算機</title>
+</head>
+<?php
+ 	ini_set('display_errors', '1');
+	if(isset($_POST["num1"]) && isset($_POST["num2"]))
+	{
+		if(empty(($_POST["num1"]))){
+			echo "第一個數字不得為空<br>";
+		}
+		if(empty(($_POST["num2"]))){
+			echo "第二個數字不得為空<br>";
+		}
+	$oper = $_POST["oper"];
+	$num1 = $_POST["num1"];
+	$num2 = $_POST["num2"];
+}
+
 ?>
 
 <body>
