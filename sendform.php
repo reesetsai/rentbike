@@ -73,22 +73,3 @@ $mysqli->close();
 ?>
 
 // Connect to server and select databse.
-require_once("configform.php");
-ini_set('display_errors', '1');
-
-$mysqli = new mysqli($db_host, $db_username, $db_password, $db_name);
-if($mysqli->connect_error) {
-	die('Error : ('. $mysqli->connect_errno .') '. $mysqli->connect_error);
-}
-
-echo 'DB connect success<br>';
-
-$username= $_POST["username"];
-$id1= $_POST["ide"];
-$phone= $_POST["phone"];
-
-fdsfdsfdsfdsfdsfdsfdsfdsfd
-dfdsf
-ds
-fds
-fdsfdsfd
